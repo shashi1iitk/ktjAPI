@@ -1,0 +1,31 @@
+<div class="container mx-auto">
+<div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+<h1>Login Here</h1>
+</div>
+<?php if (isset($message)) : ?>
+<article class="message">
+    <div class="message-header">
+        <p>Message</p>
+        <button class="delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+        <?= $message; ?>
+    </div>
+</article>
+<?php endif; ?>
+<?php
+echo validation_errors();
+echo form_open('admin'); ?>
+
+    <label for="email">email</label>
+    <input type="email" name="email" class="transition focus:outline-0 border border-transparent focus:bg-white focus:border-grey-light placeholder-grey-darkest rounded bg-grey-lighter py-2 pr-4 pl-10 block w-full appearance-none leading-normal ds-input">
+    <br>
+    <label for="password">password</label>
+    <input type="password" name="password" class="transition focus:outline-0 border border-transparent focus:bg-white focus:border-grey-light placeholder-grey-darkest rounded bg-grey-lighter py-2 pr-4 pl-10 block w-full appearance-none leading-normal ds-input">
+    <br>
+    <input type="submit" value="Login" name="submit" class="button is-primary">
+</form>
+    <div class="section">
+        <a href="<?= site_url() ?>passwordreset">Forgot Password</a>
+    </div>
+</div>
